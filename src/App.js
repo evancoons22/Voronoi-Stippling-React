@@ -13,22 +13,29 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="App-header-container">
 
-        <div class = 'links'> 
-        <a href = 'https://en.wikipedia.org/wiki/Travelling_salesman_problem#Euclidean' className='linkbutton' target={'_blank'} rel="noreferrer">
-          {/* <img src={require('./wikilogo.png')} alt = '' width='35x' /> */}
-          <img src='https://upload.wikimedia.org/wikipedia/commons/4/46/Wikipedia-W-visual-balanced.svg' alt = '' height = '35' />
-          {/* <img src='https://upload.wikimedia.org/wikipedia/commons/8/80/Wikipedia-logo-v2.svg' alt = '' width='35x' /> */}
-        </a>
-        <a href = 'https://github.com/evancoons22/EPIC-Report-Automation/blob/main/report%20page/main.html' target={'_blank'} rel="noreferrer" className = 'linkbutton'>
-          <img src={require('./github.png')} alt = '' height='35' />
-        </a>
+        <div class = 'flex-item links'> 
+          <a href = 'https://en.wikipedia.org/wiki/Travelling_salesman_problem#Euclidean' target={'_blank'} rel="noreferrer" className = 'linkbutton'>
+            <img src={require('./wikilogo.png')} alt = '' className='linkbutton' class = 'linkbutton' />
+          </a>
+          <a href = 'https://github.com/evancoons22/EPIC-Report-Automation/blob/main/report%20page/main.html' target={'_blank'} rel="noreferrer" className = 'linkbutton' >
+            <img src={require('./github.png')} alt = '' className='linkbutton' />
+          </a>
+          <a href = "https://www.cs.ubc.ca/labs/imager/tr/2002/secord2002b/secord.2002b.pdf" target = {'_blank'} rel = "noreferrer" className='linkbutton'> 
+              <img src = {require('./camel.png')} alt = '' className='linkbutton' />
+          </a>
         </div>
-          <h1 className='title'> Voronoi Stippling and Rust Traveling Salesman</h1>
-        
-      </header>
 
+        <div class = 'flex-item title'> 
+        <div>  
+          <h1>Voronoi Stippling and Rust Travelling Salesman</h1>
+        </div>
+        </div>
+
+        <div class= "flex-item links">  </div>
+
+      </div>
       <div className='body'> 
       <UploadAndDisplayImage 
       setUploaded={setUploaded} 
@@ -48,6 +55,17 @@ function App() {
             )
           }
       </div>
+
+    <div className='writing'>
+      <div> 
+          Background
+      </div>
+      <br />
+      <br />
+      <div> Voronoi Stippling is a method of dotting an image using an algorithm outlined <a href = "https://www.cs.ubc.ca/labs/imager/tr/2002/secord2002b/secord.2002b.pdf"> here </a> 
+      </div>
+
+    </div>
     </div>
   );
 }

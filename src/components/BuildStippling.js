@@ -4,17 +4,12 @@ import 'https://d3js.org/d3.v5.min.js';
 
 const BuildStippling = ({imgData}) => {
     const [create, setCreate] = useState(true);
-    // const mystyle = {width:"600px", height: "600px", border:"1px solid #d3d3d3"};
-    // const mystyle = {width:toString(imgData.width), height: toString(imgData.height), border:"1px solid #d3d3d3"};
-    const mystyle = {width:'600px', border:"1px solid #d3d3d3"};
-
 
     function messaged({data: points}) {
         var c = document.getElementById("myCanvas");
         var ctx = c.getContext("2d");
         const height = imgData.height;
         const width = imgData.width;
-        console.log(points)
         ctx.fillStyle = "#fff";
         ctx.fillRect(0, 0, width, height);
         ctx.beginPath();
@@ -29,7 +24,6 @@ const BuildStippling = ({imgData}) => {
 
     
     const handleclick = async () => { 
-        setCreate(true);
         var c = document.getElementById("myCanvas");
         
         c.width = imgData.width;
@@ -49,26 +43,24 @@ const BuildStippling = ({imgData}) => {
         worker.addEventListener("message", messaged);
         
         
-        // const n = 41434;
-        const n = 100000;
-        // build(data, width, height, 41434, ctx);
+        const n = 50000;
+        setCreate(false);
         worker.postMessage({data, n, width, height});
         
-                
     }
 
     return ( 
-        <div>
-        <button onClick = {handleclick}> Create a Voronoi Stippling</button>
         <div> 
-        {create ? (
-            <canvas id="myCanvas" style = {mystyle}> your browser does not support canvas </canvas>
-            ) : ( 
-                <div> Click the button to create a voronoi stippling </div>
-            )
+        <canvas id="myCanvas" className="img-element" > your browser does not support canvas </canvas>
+        <br/>
+        {create ? ( 
+        <button onClick = {handleclick} className = "button"> Create a Voronoi Stippling</button>
+        ) : (
+            <div>Restart to Run Again</div>
+        )
         }
         </div>
-        </div>
+
     );
 };
 

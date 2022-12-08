@@ -45,8 +45,6 @@ import * as d3 from "d3-delaunay";
         points[i * 2 + 1] = y0 + (y1 - y0) * 1.8 + (Math.random() - 0.5) * w;
       }
   
-
-      console.log(points);
       voronoi.update();
       postMessage(points);
     }

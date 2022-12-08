@@ -36,32 +36,32 @@ const UploadAndDisplayImage = ({setUploaded, setSelectedImage, selectedImage, se
     <div>
       {selectedImage && (
         <div>
-        <img id = "selectedimage" alt="not found" width={"400px"} src={URL.createObjectURL(selectedImage)} />
+        <img id = "selectedimage" alt="not found" className = "img-element" src={URL.createObjectURL(selectedImage)} />
         <br />
-        <button onClick={()=>{ 
+        <button className = 'button' onClick={()=>{ 
             setSelectedImage(null);
             setUploaded(false);
         }
         }>Remove</button>
         </div>
       )}
-      <br />
-     
       <br /> 
+
+      {/* This trickery just allows to relabel an input button to get the button styling */}
+      <label className="button" for = 'imageinput'>  Upload an Image </label>
       <input
         id = 'imageinput'
         type="file"
         name="myImage"
+        className="input"
         onChange={(event) => {
           console.log(event.target.files[0]);
           setSelectedImage(event.target.files[0]);
         }}
-      />
+        />
+      
       <div> 
-      <canvas id="secondcanvas" height ='400' width='400' style={{display: 'none'}} > Your browser does not support this html tag</canvas>
-      </div>
-      <div> 
-        {/* <canvas id = "drawingcanvas" style={mystyle}> </canvas> */}
+      <canvas id="secondcanvas" height ='400' width='400' style={{display: 'none', border: '#000'}} > Your browser does not support this html tag</canvas>
       </div>
     </div>
   );
