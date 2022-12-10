@@ -17,13 +17,13 @@ function App() {
 
         <div class = 'flex-item links'> 
           <a href = 'https://en.wikipedia.org/wiki/Travelling_salesman_problem#Euclidean' target={'_blank'} rel="noreferrer" className = 'linkbutton'>
-            <img src={require('./wikilogo.png')} alt = '' className='linkbutton' class = 'linkbutton' />
+            <img src={require('./img/wikilogo.png')} alt = '' className='linkbutton' class = 'linkbutton' />
           </a>
           <a href = 'https://github.com/evancoons22/EPIC-Report-Automation/blob/main/report%20page/main.html' target={'_blank'} rel="noreferrer" className = 'linkbutton' >
-            <img src={require('./github.png')} alt = '' className='linkbutton' />
+            <img src={require('./img/github.png')} alt = '' className='linkbutton' />
           </a>
           <a href = "https://www.cs.ubc.ca/labs/imager/tr/2002/secord2002b/secord.2002b.pdf" target = {'_blank'} rel = "noreferrer" className='linkbutton'> 
-              <img src = {require('./camel.png')} alt = '' className='linkbutton' />
+              <img src = {require('./img/camel.png')} alt = '' className='linkbutton' />
           </a>
         </div>
 

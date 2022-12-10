@@ -1,11 +1,18 @@
 import React, {useState} from "react";
 import 'https://d3js.org/d3.v5.min.js';
+import DisplayPath from "./DisplayPath";
 
 
 const BuildStippling = ({imgData}) => {
     const [create, setCreate] = useState(true);
+    // Disable the button
+    const [stipplingdone, setStipllingDone] = useState(false);
 
-    function messaged({data: points}) {
+    function messaged(event) {
+        const message = event.data;
+        const points = message.data;
+
+        // {data: points}
         var c = document.getElementById("myCanvas");
         var ctx = c.getContext("2d");
         const height = imgData.height;
@@ -20,6 +27,12 @@ const BuildStippling = ({imgData}) => {
         }
         ctx.fillStyle = "#000";
         ctx.fill();
+
+        if (message.type === 'done') {
+            // The web worker is finished working
+            console.log('The web worker is finished working!');
+            setStipllingDone(true);
+          }
       }
 
     
@@ -46,8 +59,9 @@ const BuildStippling = ({imgData}) => {
         const n = 50000;
         setCreate(false);
         worker.postMessage({data, n, width, height});
-        
     }
+
+    const info = 1;
 
     return ( 
         <div> 
@@ -59,6 +73,13 @@ const BuildStippling = ({imgData}) => {
             <div>Restart to Run Again</div>
         )
         }
+        <br />
+        {stipplingdone ? (
+
+            <button className = "button" id = "rust-button" onClick={() => DisplayPath(info)}>Draw an Optimal Path</button>
+        ):(
+            <button className = "button" id = "rust-button" disabled onClick={() => DisplayPath(info)}>Wait for stippling to begin TSP</button>
+        )}
         </div>
 
     );
