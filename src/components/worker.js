@@ -20,6 +20,8 @@ import * as d3 from "d3-delaunay";
     const delaunay = new d3.Delaunay(points);
     const voronoi = delaunay.voronoi([0, 0, width, height]);
   
+    // k = 80 for a good stippling
+
     for (let k = 0; k < 80; ++k) {
   
       // Compute the weighted centroid for each Voronoi cell.

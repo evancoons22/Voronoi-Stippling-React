@@ -9,7 +9,6 @@ function App() {
   const [uploaded, setUploaded] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const [imgData, setimgData] = useState(); 
-  console.log(imgData);
 
   return (
     <div className="App">
