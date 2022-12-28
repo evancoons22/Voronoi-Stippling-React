@@ -9,6 +9,7 @@ const BuildStippling = ({imgData}) => {
     const [voronoipoints, setVoronoiPoints] = useState(null);
     const [goodrequest, setGoodRequest] = useState(true);
 
+    // handles a call to the rust api for finding a tsp solution
     const DisplayPath = async () => {
         console.log("this function call worked")
       
@@ -28,6 +29,7 @@ const BuildStippling = ({imgData}) => {
             .catch(setGoodRequest(false));
     }
     
+    // Drawing the path of the tsp solution from the backend
     const DrawPath = (tsporder) => { 
       const c = document.getElementById("myCanvas");
       const ctx = c.getContext("2d");
@@ -43,6 +45,8 @@ const BuildStippling = ({imgData}) => {
   
     }
 
+  
+    // Every time the web worker sends an update, this function handles the new set of points
     function messaged(event) {
         const message = event.data;
         const points = message.data;
@@ -73,6 +77,7 @@ const BuildStippling = ({imgData}) => {
       }
 
     
+    // handles 'create voronoi stippling' -- begins web worker and the listener
     const handleclick = async () => { 
         var c = document.getElementById("myCanvas");
         
@@ -92,7 +97,7 @@ const BuildStippling = ({imgData}) => {
         worker.addEventListener("message", messaged);
         
         
-        const n = 10000;
+        const n = 50000;
         setCreate(false);
         worker.postMessage({data, n, width, height});
     }

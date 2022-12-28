@@ -1,5 +1,5 @@
 ## Voronoi Stippling with web worker in React
-A UI for voronoi stippling using React. Upload an image to produce a stippling, based on brightness values and improved iteratively. After the stippling is created, the `Rust-api-Traveling-Salesman` backend can be used to create a shortest path between points (NP hard!!). 
+A UI for voronoi stippling using React. Upload an image to produce a stippling based on brightness values that improves iteratively. After the stippling is created, the `Rust-api-Traveling-Salesman` backend can be used to create a shortest path between points (NP hard!!). 
 
 ### Summary
 

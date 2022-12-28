@@ -48,7 +48,7 @@ const UploadAndDisplayImage = ({setUploaded, setSelectedImage, selectedImage, se
       <br /> 
 
       {/* This trickery just allows to relabel an input button to get the button styling */}
-      <label className="button" for = 'imageinput'>  Upload an Image </label>
+      <label className="button" htmlFor = 'imageinput'>  Upload an Image </label>
       <input
         id = 'imageinput'
         type="file"

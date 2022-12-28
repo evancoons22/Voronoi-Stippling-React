@@ -127,9 +127,10 @@
 }
 
 .writing { 
-  display: flex;
-  justify-content: left;
-  margin: 2vw;
+  text-align: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-bottom:5%;
 }
 
 @keyframes App-logo-spin {
