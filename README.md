@@ -7,11 +7,11 @@ A web worker is used to begin with a random stippling and iteratively imporve th
 
 The Rust TSP api allows observation an NP-hard problem. The api does not use brute force, but rather hill climbing. This can be changed by replacing `hill_climbing` with `brute_force` in main.rs. With many points in the stippling, a perfect (or even good) solution is almost impossible.
 
-```
-<p align="center">
+
+<div align="center">
   <img src={require('./img/example.png')} alt="Alt Text">
-</p>
-```
+</div>
+
 
 This was inspired by the [TSP art challenge solution](https://www.math.uwaterloo.ca/tsp/data/ml/monalisa.html) of 100,000 points over the Mona Lisa.
 1. [other article 1](https://www2.oberlin.edu/math/faculty/bosch/tspart-page.html)
