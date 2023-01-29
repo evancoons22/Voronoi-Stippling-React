@@ -9,7 +9,7 @@ The Rust TSP api allows observation an NP-hard problem. The api does not use bru
 
 
 <div align="center">
-  <img src={require('./img/example.png')} alt="Alt Text">
+  <img src='./img/example.png' alt="Alt Text">
 </div>
 
 
