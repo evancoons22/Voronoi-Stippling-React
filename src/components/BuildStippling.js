@@ -97,7 +97,7 @@ const BuildStippling = ({imgData}) => {
         worker.addEventListener("message", messaged);
         
         
-        const n = 50000;
+        const n = 80000;
         setCreate(false);
         worker.postMessage({data, n, width, height});
     }
