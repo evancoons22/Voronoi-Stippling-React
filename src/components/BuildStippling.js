@@ -1,7 +1,5 @@
 import React, {useState} from "react";
 import 'https://d3js.org/d3.v5.min.js';
-// import DisplayPath from "./DisplayPath";
-
 
 const BuildStippling = ({imgData}) => {
     const [create, setCreate] = useState(true); // Disable the button
@@ -54,19 +52,20 @@ const BuildStippling = ({imgData}) => {
         // {data: points}
         var c = document.getElementById("myCanvas");
         var ctx = c.getContext("2d");
-        const height = imgData.height;
+        const height = imgData.height; 
         const width = imgData.width;
         ctx.fillStyle = "#fff";
         ctx.fillRect(0, 0, width, height);
         ctx.beginPath();
         for (let i = 0, n = points.length; i < n; i += 2) {
           const x = points[i], y = points[i + 1];
-          ctx.moveTo(x + 1.5, y);
-          ctx.arc(x, y, 1.5, 0, 2 * Math.PI);
+          ctx.moveTo(x + 1.5, y); // x + 1.5
+          ctx.arc(x, y, 1.5, 0, 2 * 3.1415); // Math.PI
         }
+        // console.log("receiving the message")
         ctx.fillStyle = "#000";
         ctx.fill();
-
+        
         if (message.type === 'done') {
             // The web worker is finished working
             console.log('The web worker is finished working!');
@@ -76,7 +75,6 @@ const BuildStippling = ({imgData}) => {
           }
       }
 
-    
     // handles 'create voronoi stippling' -- begins web worker and the listener
     const handleclick = async () => { 
         var c = document.getElementById("myCanvas");
@@ -93,11 +91,11 @@ const BuildStippling = ({imgData}) => {
         for (let i = 0, n = rgba.length / 4; i < n; ++i) data[i] = Math.max(0, 1 - rgba[i * 4] / 254);
 
         const worker = new Worker(new URL('./worker.js', import.meta.url));
+        // console.log("calling the worker")
 
         worker.addEventListener("message", messaged);
         
-        
-        const n = 80000;
+        const n = 30000;
         setCreate(false);
         worker.postMessage({data, n, width, height});
     }

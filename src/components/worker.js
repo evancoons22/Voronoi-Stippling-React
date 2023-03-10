@@ -1,5 +1,4 @@
 import * as d3 from "d3-delaunay";
-// export default function build(data, width, height, n, ctx) {
     onmessage = event => {
 
     const {data: {data, width, height, n}} = event;
@@ -16,6 +15,11 @@ import * as d3 from "d3-delaunay";
         if (Math.random() < data[y * width + x]) break;
       }
     }
+
+    postMessage({
+      type: 'running',
+      data: points
+    })
   
     const delaunay = new d3.Delaunay(points);
     const voronoi = delaunay.voronoi([0, 0, width, height]);
@@ -48,7 +52,7 @@ import * as d3 from "d3-delaunay";
       }
   
       voronoi.update();
-      // postMessage(points);
+      // console.log("sending the message");
       postMessage({
         type: 'running',
         data: points
