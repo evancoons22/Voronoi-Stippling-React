@@ -52,7 +52,6 @@ import * as d3 from "d3-delaunay";
       }
   
       voronoi.update();
-      // console.log("sending the message");
       postMessage({
         type: 'running',
         data: points

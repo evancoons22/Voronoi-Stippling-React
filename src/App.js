@@ -1,7 +1,6 @@
 import './App.css';
 import BuildStippling from './components/BuildStippling';
 import UploadAndDisplayImage from './components/UploadAndDisplayImage';
-// import DisplayPath from './components/DisplayPath';
 import { useState } from 'react';
 
 

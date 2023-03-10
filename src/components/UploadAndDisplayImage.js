@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 
 const UploadAndDisplayImage = ({setUploaded, setSelectedImage, selectedImage, setimgData, imgData}) => {
 
-    // const mystyle = { height: '400', width: '400', style:"border:1px solid #d3d3d3;"}
   // this code displays the image on a hidden canvas to get rgb data
   // credit here: https://educity.app/web-development/how-to-upload-and-draw-an-image-on-html-canvas
   useEffect( () => {
