@@ -42,6 +42,7 @@ const UploadAndDisplayImage = ({setUploaded, setSelectedImage, selectedImage, se
           setSelectedImage(null);
           setUploaded(false);
           setimgData(null);
+          setUploaded(false);
           
         }
       }>Remove</button>

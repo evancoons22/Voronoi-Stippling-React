@@ -117,6 +117,10 @@
   display: none;
 }
 
+.body-title { 
+  display:flex;
+  justify-content: space-evenly;
+}
 .body { 
   display: flex;
   justify-content: space-evenly;
@@ -143,7 +147,7 @@
   text-align: left;
   margin-left: 1%;
   margin-right: 1%;
-  margin-bottom:5%;
+  margin-bottom:2%;
 }
 
 @keyframes App-logo-spin {

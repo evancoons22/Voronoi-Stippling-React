@@ -3,9 +3,9 @@ A UI for voronoi stippling using React. Upload an image to produce a stippling b
 
 ### Summary
 
-A web worker is used to begin with a random stippling and iteratively imporve those points. At each iteration, voronoi diagrams are created, every coordinate being a generating point. The centroids of the voronoi diagrams (weighted on brightness) are used as the generating points of the next iteration. In this way, the points adjust and an image appears. See [this research](https://www.cs.ubc.ca/labs/imager/tr/2002/secord2002b/secord.2002b.pdf), also linked below as **#1**. 
+A web worker is used to begin with a random stippling and iteratively imporve those points. At each iteration, the centroids are updated based on the brightness of the points around it. In other words, we find all the points closest to the centroid, but instead of updating the centroid based on the mean of the closest points, the centroid is updated based on a weighted average with the brightness values of the points. Over many iterations, the centroids converge towards the darkest regions, and the image appears. See this research, also linked below as **#1**.
 
-The Rust TSP api allows observation an NP-hard problem. The api does not use brute force, but rather hill climbing. This can be changed by replacing `hill_climbing` with `brute_force` in main.rs. With many points in the stippling, a perfect (or even good) solution is almost impossible.
+The Rust TSP api is an experiment with an NP hard problem. The api does not use brute force, but rather hill climbing. This can be changed by replacing `hill_climbing` with `brute_force` in main.rs. With many points in the stippling, a perfect (or even good) solution is almost impossible.
 
 ![Alt Text](example.png)
 
