@@ -1,11 +1,12 @@
 import React, {useState} from "react";
-import 'https://d3js.org/d3.v5.min.js';
+// import 'https://d3js.org/d3.v5.min.js';
 
 const BuildStippling = ({imgData}) => {
     const [create, setCreate] = useState(true); // Disable the button
     const [stipplingdone, setStipllingDone] = useState(false);
     const [voronoipoints, setVoronoiPoints] = useState(null);
     const [goodrequest, setGoodRequest] = useState(true);
+    const [N, setN] = useState(30000);
 
     // handles a call to the rust api for finding a tsp solution
     const DisplayPath = async () => {
@@ -95,18 +96,33 @@ const BuildStippling = ({imgData}) => {
 
         worker.addEventListener("message", messaged);
         
-        const n = 30000;
+        const n = N;
+        // const n = 30000;
         setCreate(false);
         worker.postMessage({data, n, width, height});
     }
 
+    const handleN = (event) => { 
+      setN(event.target.value);
+    }
 
     return ( 
         <div> 
         <canvas id="myCanvas" className="img-element" > your browser does not support canvas </canvas>
         <br/>
         {create ? ( 
-        <button onClick = {handleclick} className = "button"> Create a Voronoi Stippling</button>
+        <div>
+        <form onSubmit={handleclick}> 
+        <label> 
+          Input Number: {N}
+          <br></br>
+          <input type = "range" className = "slider" min = "100" max = "100000"  onChange = {handleN}/> 
+        </label>
+          <br></br>
+          <input className='button' type="submit" value="Begin Stippling" />
+        </form>
+
+        </div>
         ) : (
             <div>Restart to Run Again</div>
         )
