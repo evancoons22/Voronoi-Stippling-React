@@ -27,7 +27,7 @@ function App() {
 
         <div className = 'flex-item title'> 
         <div>  
-          <h1>Voronoi Stippling and Rust Travelling Salesman</h1>
+          <h1>K Means Stippling and Rust Travelling Salesman</h1>
           <h3> Evan Coons</h3>
         </div>
         </div>
