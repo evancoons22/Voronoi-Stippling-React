@@ -14,6 +14,15 @@
   }
 }
 
+.algoparent { 
+  display: flex;
+  justify-content: center;
+}
+
+.algo { 
+  width: 55vw; 
+}
+
 .App-header-container {
   display: flex;
   min-height: 6vh;

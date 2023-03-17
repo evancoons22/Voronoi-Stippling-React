@@ -66,6 +66,13 @@ function App() {
       <p><b> Notes</b>: This K-means algorithm has been implemented before, and I marked all my sources below. </p>
       <h3 id="summary">Summary</h3>
       <p>A web worker is used to begin with a random stippling and iteratively imporve those points. At each iteration, the centroids are updated based on the brightness of the points around it. In other words, we find all the points closest to the centroid, but instead of updating the centroid based on the mean of the closest points, the centroid is updated based on a weighted average with the brightness values of the points (darker points weighted heavier). Over many iterations, the centroids converge towards the darkest regions, and the image appears. See <a href="https://www.cs.ubc.ca/labs/imager/tr/2002/secord2002b/secord.2002b.pdf">this research</a>, also linked below as <strong>#1</strong>. </p>
+      <p>Algorithm:</p>
+      <div className='algoparent'> 
+      <img src = {require("./img/algo.png")} className = "algo" alt = "missing"/>
+      </div>
+      <br />
+      <br /> 
+      <p>More information on the weights can be found in worker.js, which is the implementation of the algorithm</p>
       <p>The Rust TSP api is an experiment with an NP hard problem. The api does not use brute force, but rather hill climbing. This can be changed by replacing <code>hill_climbing</code> with <code>brute_force</code> in main.rs. With many points in the stippling, a perfect (or even good) solution is almost impossible.</p>
       <p>This was inspired by the <a href="https://www.math.uwaterloo.ca/tsp/data/ml/monalisa.html">TSP art challenge solution</a> of 100,000 points over the Mona Lisa. And these articles:</p>
       <ol>
