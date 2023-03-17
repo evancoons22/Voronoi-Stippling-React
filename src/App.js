@@ -14,7 +14,7 @@ function App() {
       <div className="App-header-container">
 
         <div className = 'flex-item links'> 
-          <a href = 'https://en.wikipedia.org/wiki/Travelling_salesman_problem#Euclidean' target={'_blank'} rel="noreferrer" className = 'linkbutton'>
+          <a href = 'https://en.wikipedia.org/wiki/Travelling_salesman_problem' target={'_blank'} rel="noreferrer" className = 'linkbutton'>
             <img src={require('./img/wikilogo.png')} alt = '' className='linkbutton' />
           </a>
           <a href = 'https://github.com/evancoons22/Voronoi-Stippling-React' target={'_blank'} rel="noreferrer" className = 'linkbutton' >
@@ -43,7 +43,6 @@ function App() {
 
       <div className='body'> 
       <UploadAndDisplayImage 
-      // setUploaded={setUploaded} 
       setSelectedImage={setSelectedImage} 
       selectedImage={selectedImage}
       setimgData={setimgData}

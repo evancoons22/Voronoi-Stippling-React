@@ -40,13 +40,7 @@ const UploadAndDisplayImage = ({setSelectedImage, selectedImage, setimgData, img
         <br />
         <button className = 'button' onClick={()=>{ 
           setSelectedImage(null);
-          // setUploaded(false);
           setimgData(null);
-          // const canvas = document.getElementById("secondcanvas");
-          // const ctx = canvas.getContext("2d");
-
-          // // Clear the canvas
-          // ctx.clearRect(0, 0, 0, 0);
           
         }
       }>Remove</button>
@@ -57,9 +51,8 @@ const UploadAndDisplayImage = ({setSelectedImage, selectedImage, setimgData, img
 
 
       {/* This trickery just allows to relabel an input button to get the button styling */}
-      <div> 
-  
-      
+
+
         <div> 
         <label className="button" htmlFor = 'imageinput'>  Upload an Image </label>
         <input
@@ -78,7 +71,6 @@ const UploadAndDisplayImage = ({setSelectedImage, selectedImage, setimgData, img
         </div>
     
       
-        </div>
       
     
 

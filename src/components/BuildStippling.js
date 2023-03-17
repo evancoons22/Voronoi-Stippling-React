@@ -63,7 +63,6 @@ const BuildStippling = ({imgData}) => {
           ctx.moveTo(x + 1.5, y); // x + 1.5
           ctx.arc(x, y, 1.5, 0, 2 * 3.1415); // Math.PI
         }
-        // console.log("receiving the message")
         ctx.fillStyle = "#000";
         ctx.fill();
         
