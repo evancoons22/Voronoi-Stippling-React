@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 
 
-const UploadAndDisplayImage = ({setUploaded, setSelectedImage, selectedImage, setimgData, imgData}) => {
+const UploadAndDisplayImage = ({setSelectedImage, selectedImage, setimgData, imgData}) => {
 
   // this code displays the image on a hidden canvas to get rgb data
   // credit here: https://educity.app/web-development/how-to-upload-and-draw-an-image-on-html-canvas
-  useEffect( () => {
+   useEffect( () => {
       let imgInput = document.getElementById('imageinput');
       imgInput.addEventListener('change', function(e) {
         if(e.target.files) {
@@ -23,7 +23,7 @@ const UploadAndDisplayImage = ({setUploaded, setSelectedImage, selectedImage, se
               ctx.drawImage(myImage,0,0); // Draws the image on canvas
               const data = ctx.getImageData(0, 0, myImage.width, myImage.height);
               setimgData(data);
-              setUploaded(true);
+              // setUploaded(true);
             }
           }
         }
@@ -40,20 +40,29 @@ const UploadAndDisplayImage = ({setUploaded, setSelectedImage, selectedImage, se
         <br />
         <button className = 'button' onClick={()=>{ 
           setSelectedImage(null);
-          setUploaded(false);
+          // setUploaded(false);
           setimgData(null);
-          setUploaded(false);
+          // const canvas = document.getElementById("secondcanvas");
+          // const ctx = canvas.getContext("2d");
+
+          // // Clear the canvas
+          // ctx.clearRect(0, 0, 0, 0);
           
         }
       }>Remove</button>
         </div>
       )}
+
       <br /> 
 
 
       {/* This trickery just allows to relabel an input button to get the button styling */}
-      <label className="button" htmlFor = 'imageinput'>  Upload an Image </label>
-      <input
+      <div> 
+  
+      
+        <div> 
+        <label className="button" htmlFor = 'imageinput'>  Upload an Image </label>
+        <input
         id = 'imageinput'
         type="file"
         name="myImage"
@@ -62,7 +71,17 @@ const UploadAndDisplayImage = ({setUploaded, setSelectedImage, selectedImage, se
           console.log(event.target.files[0]);
           setSelectedImage(event.target.files[0]);
         }}
+        onClick={(event)=> { 
+          event.target.value = null
+        }}
         />
+        </div>
+    
+      
+        </div>
+      
+    
+
       
       <div> 
       <canvas id="secondcanvas" height ='0' width='0' style={{display: 'none', border: '#000'}} > Your browser does not support this html tag</canvas>
