@@ -1,6 +1,8 @@
 ## Voronoi Stippling with web worker in React
 Upload an image to produce a stippling based on brightness values that improves iteratively. After the stippling is created, the `Rust-api-Traveling-Salesman` backend can be used to create a shortest path between points (NP hard!!). This was built with React and Rust. 
 
+Try it [here](https://voronoi-stippling-react.netlify.app/)
+
 ### Summary
 
 A web worker chooses a random stippling and iteratively imporve those points. At each iteration, the centroids are updated based on the brightness of the points around it. In other words, we find all the points closest to the centroid, but instead of updating the centroid based on the mean of the closest points, the centroid is updated based on a weighted average with the brightness values of the points. Over many iterations, the centroids converge towards the darkest regions, and the image appears. See this research, also linked below as **#1**.
