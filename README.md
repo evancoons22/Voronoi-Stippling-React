@@ -9,7 +9,9 @@ A web worker chooses a random stippling and iteratively imporve those points. At
 
 The Rust TSP api is an experiment with an NP hard problem. The api does not use brute force, but rather hill climbing. This can be changed by replacing `hill_climbing` with `brute_force` in main.rs. With many points in the stippling, a perfect (or even good) solution is almost impossible.
 
-![Alt Text](example.png)
+### Example
+ 
+<img src="https://github.com/evancoons22/Voronoi-Stippling-React/blob/main/voronoi.gif" width="640">
 
 
 This was inspired by the [TSP art challenge solution](https://www.math.uwaterloo.ca/tsp/data/ml/monalisa.html) of 100,000 points over the Mona Lisa.
